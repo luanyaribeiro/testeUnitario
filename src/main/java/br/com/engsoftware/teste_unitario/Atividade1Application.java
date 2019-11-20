@@ -1,4 +1,4 @@
-package br.edu.ifma.engsoftii.atividade1;
+package br.com.engsoftware.teste_unitario;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

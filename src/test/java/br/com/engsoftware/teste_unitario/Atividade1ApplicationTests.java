@@ -1,4 +1,4 @@
-package br.edu.ifma.engsoftii.atividade1;
+package br.com.engsoftware.teste_unitario;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

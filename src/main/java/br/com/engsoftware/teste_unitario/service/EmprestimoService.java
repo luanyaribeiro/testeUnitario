@@ -1,8 +1,8 @@
-package br.edu.ifma.engsoftii.atividade1.service;
+package br.com.engsoftware.teste_unitario.service;
 
-import br.edu.ifma.engsoftii.atividade1.model.Emprestimo;
-import br.edu.ifma.engsoftii.atividade1.model.Livro;
-import br.edu.ifma.engsoftii.atividade1.model.Usuario;
+import br.com.engsoftware.teste_unitario.model.Emprestimo;
+import br.com.engsoftware.teste_unitario.model.Livro;
+import br.com.engsoftware.teste_unitario.model.Usuario;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

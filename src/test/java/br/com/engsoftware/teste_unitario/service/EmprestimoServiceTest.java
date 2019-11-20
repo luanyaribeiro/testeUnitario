@@ -1,16 +1,14 @@
-package br.edu.ifma.engsoftii.atividade1.service;
+package br.com.engsoftware.teste_unitario.service;
 
-import br.edu.ifma.engsoftii.atividade1.model.Autor;
-import br.edu.ifma.engsoftii.atividade1.model.Emprestimo;
-import br.edu.ifma.engsoftii.atividade1.model.Livro;
-import br.edu.ifma.engsoftii.atividade1.model.Usuario;
+import br.com.engsoftware.teste_unitario.model.Autor;
+import br.com.engsoftware.teste_unitario.model.Emprestimo;
+import br.com.engsoftware.teste_unitario.model.Livro;
+import br.com.engsoftware.teste_unitario.model.Usuario;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class EmprestimoServiceTest {
   
@@ -53,7 +51,7 @@ class EmprestimoServiceTest {
             .build();
 
     emprestimoService.criarEmprestimo(livro, usuario);
-    assertEquals(null,  emprestimoService.criarEmprestimo(livro, usuario));
+    Assertions.assertEquals(null,  emprestimoService.criarEmprestimo(livro, usuario));
 
   }
 

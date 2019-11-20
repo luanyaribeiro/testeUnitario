@@ -1,4 +1,4 @@
-package br.edu.ifma.engsoftii.atividade1.model;
+package br.com.engsoftware.teste_unitario.model;
 
 import java.util.List;
 

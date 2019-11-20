@@ -1,10 +1,8 @@
-package br.edu.ifma.engsoftii.atividade1.model;
+package br.com.engsoftware.teste_unitario.model;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.List;
 
-import lombok.Builder;
 import lombok.Data;
 
 @Data
