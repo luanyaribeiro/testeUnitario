@@ -181,16 +181,66 @@ class EmprestimoServiceTest {
 
   @Test
   void testeDevolucaoNaDataPrevista() {
+    Usuario usuario = Usuario.builder()
+            .matricula("001")
+            .nome("Luany")
+            .build();
 
+    Livro livro = Livro.builder()
+            .autor(new Autor())
+            .isReservado(false)
+            .isEmprestado(false)
+            .build();
+
+    Emprestimo emprestimo = emprestimoService.criarEmprestimo(livro, usuario);
+    Assertions.assertEquals(true,livro.isEmprestado());
+    emprestimo.setDataDevolucao(LocalDate.now().plusDays(7));
+    emprestimoService.finalizaEmprestimoHoje(livro, emprestimo);
+    Assertions.assertEquals(true,livro.estaDisponivel());
   }
 
   @Test
   void testeDevolucaoComUmDiaDeAtraso() {
 
+      Usuario usuario = Usuario.builder()
+              .matricula("001")
+              .nome("Luany")
+              .build();
+
+      Livro livro = Livro.builder()
+              .autor(new Autor())
+              .isReservado(false)
+              .isEmprestado(false)
+              .build();
+
+      Emprestimo emprestimo = emprestimoService.criarEmprestimo(livro, usuario);
+      Assertions.assertEquals(true,livro.isEmprestado());
+      emprestimo.setDataDevolucao(LocalDate.now().plusDays(8));
+      emprestimoService.finalizaEmprestimoHoje(livro, emprestimo);
+      Assertions.assertEquals(true,livro.estaDisponivel());
+      double valor = emprestimoService.valorAPagar(emprestimo);
+      Assertions.assertEquals(valor, emprestimo.getValorPago());
   }
 
   @Test
   void testeDevolucaoComTrintaDiasDeAtraso() {
+    Usuario usuario = Usuario.builder()
+            .matricula("001")
+            .nome("Luany")
+            .build();
 
+    Livro livro = Livro.builder()
+            .autor(new Autor())
+            .isReservado(false)
+            .isEmprestado(false)
+            .build();
+
+    Emprestimo emprestimo = emprestimoService.criarEmprestimo(livro, usuario);
+    Assertions.assertEquals(true,livro.isEmprestado());
+    emprestimo.setDataDevolucao(LocalDate.now().plusDays(31));
+    emprestimoService.finalizaEmprestimoHoje(livro, emprestimo);
+    Assertions.assertEquals(true,livro.estaDisponivel());
+    double valor = emprestimoService.valorAPagar(emprestimo);
+    Assertions.assertEquals(valor, emprestimo.getValorPago());
   }
 }

@@ -45,4 +45,10 @@ public class EmprestimoService {
     livro.setDisponivel();
     emprestimo.setDataDevolucao(LocalDate.now());
   }
+
+  public double valorAPagar (Emprestimo emprestimo){
+    emprestimo.getValorAPagar();
+    return 0;
+  }
+
 }
